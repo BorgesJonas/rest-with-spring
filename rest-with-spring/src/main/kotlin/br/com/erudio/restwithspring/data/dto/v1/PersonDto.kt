@@ -1,6 +1,5 @@
 package br.com.erudio.restwithspring.data.dto.v1
 
-
 data class PersonDto(
     var id: Long = 0,
 
