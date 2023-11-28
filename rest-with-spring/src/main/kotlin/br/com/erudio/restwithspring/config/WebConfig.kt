@@ -1,6 +1,5 @@
 package br.com.erudio.restwithspring.config
 
-// import br.com.erudio.serilization.converter.YamlJackson2HttpMessageConverter
 import br.com.erudio.restwithspring.serialization.converter.YamlJackson2HttpMessageConverter
 import org.springframework.context.annotation.Configuration
 import org.springframework.http.MediaType

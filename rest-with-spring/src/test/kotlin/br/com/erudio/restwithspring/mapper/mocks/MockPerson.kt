@@ -4,14 +4,6 @@ import br.com.erudio.restwithspring.data.dto.v1.PersonDto
 import br.com.erudio.restwithspring.entities.Person
 
 class MockPerson {
-    fun mockEntity(): Person {
-        return mockEntity(0)
-    }
-
-    fun mockDto(): PersonDto {
-        return mockDto(0)
-    }
-
     fun mockEntityList(): ArrayList<Person> {
         val persons: ArrayList<Person> = ArrayList<Person>()
         for (i in 0..13) {
@@ -28,7 +20,7 @@ class MockPerson {
         return persons
     }
 
-    private fun mockEntity(number: Int): Person {
+    fun mockEntity(number: Int = 0): Person {
         val person = Person()
         person.address = "Address Test$number"
         person.firstName = "First Name Test$number"
@@ -38,7 +30,7 @@ class MockPerson {
         return person
     }
 
-    private fun mockDto(number: Int): PersonDto {
+    fun mockDto(number: Int = 0): PersonDto {
         val person = PersonDto()
         person.address = "Address Test$number"
         person.firstName = "First Name Test$number"
