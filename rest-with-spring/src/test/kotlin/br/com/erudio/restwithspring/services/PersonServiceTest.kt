@@ -1,8 +1,8 @@
 package br.com.erudio.restwithspring.services
 
+import br.com.erudio.restwithspring.exceptions.RequiredObjectIsNullException
 import br.com.erudio.restwithspring.mapper.mocks.MockPerson
 import br.com.erudio.restwithspring.repository.PersonRepository
-import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
 
 import org.junit.jupiter.api.Assertions.assertNotNull
@@ -14,7 +14,6 @@ import org.mockito.InjectMocks
 import org.mockito.Mock
 
 import org.mockito.Mockito.`when`
-import org.mockito.MockitoAnnotations
 import org.mockito.junit.jupiter.MockitoExtension
 import java.util.*
 
@@ -111,18 +110,16 @@ internal class PersonServiceTest {
         assertEquals("Female", result.gender)
     }
 
-    /** @Test
+    @Test
     fun createWithNullPerson() {
-        val exception: Exception = assertThrows(
-            RequiredObjectIsNullException::class.java
-        ) {
+        val exception: Exception = assertThrows(RequiredObjectIsNullException::class.java) {
             service.createPerson(null)
         }
 
         val expectedMessage = "It is not allowed to persist a null object!"
         val actualMessage = exception.message
         assertTrue(actualMessage!!.contains(expectedMessage))
-    } */
+    }
 
     @Test
     fun update() {
@@ -147,7 +144,7 @@ internal class PersonServiceTest {
         assertEquals("Female", result.gender)
     }
 
-    /** @Test
+    @Test
     fun updateWithNullPerson() {
         val exception: Exception = assertThrows(
             RequiredObjectIsNullException::class.java
@@ -158,7 +155,7 @@ internal class PersonServiceTest {
         val expectedMessage = "It is not allowed to persist a null object!"
         val actualMessage = exception.message
         assertTrue(actualMessage!!.contains(expectedMessage))
-    } */
+    }
 
     @Test
     fun delete() {

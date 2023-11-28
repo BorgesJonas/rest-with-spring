@@ -3,6 +3,7 @@ package br.com.erudio.restwithspring.services
 import br.com.erudio.restwithspring.controller.PersonController
 import br.com.erudio.restwithspring.data.dto.v1.PersonDto
 import br.com.erudio.restwithspring.entities.Person
+import br.com.erudio.restwithspring.exceptions.RequiredObjectIsNullException
 import br.com.erudio.restwithspring.exceptions.ResourceNotFoundException
 import br.com.erudio.restwithspring.mapper.DozerMapper
 import br.com.erudio.restwithspring.repository.PersonRepository
@@ -33,14 +34,16 @@ class PersonService(
         return personsDto
     }
 
-    fun createPerson(person: PersonDto): PersonDto {
+    fun createPerson(person: PersonDto?): PersonDto {
+        if (person == null) throw RequiredObjectIsNullException()
         logger.info("Creating person with name ${person.firstName}")
         val entity: Person = DozerMapper.parseObject(person, Person::class.java)
         val personDto = DozerMapper.parseObject(personRepository.save(entity), PersonDto::class.java)
         return personDto.add(linkTo(PersonController::class.java).slash(personDto.id).withSelfRel())
     }
 
-    fun updatePerson(person: PersonDto): PersonDto {
+    fun updatePerson(person: PersonDto?): PersonDto {
+        if (person == null) throw RequiredObjectIsNullException()
         logger.info("Updating person with name ${person.firstName}")
         if (!personRepository.existsById(person.id))
             throw ResourceNotFoundException("User not found!")
