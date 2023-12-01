@@ -1,8 +1,9 @@
-package br.com.erudio.restwithspring.services
+package br.com.erudio.restwithspring.unittests.services
 
 import br.com.erudio.restwithspring.exceptions.RequiredObjectIsNullException
-import br.com.erudio.restwithspring.mapper.mocks.MockPerson
+import br.com.erudio.restwithspring.unittests.services.mapper.mocks.MockPerson
 import br.com.erudio.restwithspring.repository.PersonRepository
+import br.com.erudio.restwithspring.services.PersonService
 import org.junit.jupiter.api.Test
 
 import org.junit.jupiter.api.Assertions.assertNotNull

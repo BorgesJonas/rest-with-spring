@@ -1,8 +1,9 @@
-package br.com.erudio.restwithspring.services
+package br.com.erudio.restwithspring.unittests.services
 
 import br.com.erudio.restwithspring.exceptions.RequiredObjectIsNullException
-import br.com.erudio.restwithspring.mapper.mocks.MockBook
+import br.com.erudio.restwithspring.unittests.services.mapper.mocks.MockBook
 import br.com.erudio.restwithspring.repository.BookRepository
+import br.com.erudio.restwithspring.services.BookService
 import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.extension.ExtendWith

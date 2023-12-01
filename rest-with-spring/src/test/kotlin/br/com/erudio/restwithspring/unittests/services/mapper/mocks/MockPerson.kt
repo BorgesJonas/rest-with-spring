@@ -1,4 +1,4 @@
-package br.com.erudio.restwithspring.mapper.mocks
+package br.com.erudio.restwithspring.unittests.services.mapper.mocks
 
 import br.com.erudio.restwithspring.data.dto.v1.PersonDto
 import br.com.erudio.restwithspring.entities.Person

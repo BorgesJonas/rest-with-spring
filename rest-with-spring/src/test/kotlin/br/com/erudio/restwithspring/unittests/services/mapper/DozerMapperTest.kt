@@ -1,11 +1,12 @@
-package br.com.erudio.restwithspring.mapper
+package br.com.erudio.restwithspring.unittests.services.mapper
 
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
 import br.com.erudio.restwithspring.data.dto.v1.PersonDto
 import br.com.erudio.restwithspring.entities.Person
-import br.com.erudio.restwithspring.mapper.mocks.MockPerson
+import br.com.erudio.restwithspring.mapper.DozerMapper
+import br.com.erudio.restwithspring.unittests.services.mapper.mocks.MockPerson
 
 class DozerMapperTest {
 

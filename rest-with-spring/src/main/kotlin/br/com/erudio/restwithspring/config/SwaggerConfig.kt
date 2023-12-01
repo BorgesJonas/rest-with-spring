@@ -13,7 +13,7 @@ class SwaggerConfig {
         return OpenAPI()
             .info(
                 Info()
-                    .title("RESTful API with Kotlin 1.6.10 and Spring Boot 3.0.0")
+                    .title("RESTful API with Kotlin 1.8.22 and Spring Boot 3.1.5")
                     .version("v1")
                     .description("API for Kotlin and Spring studies")
             )
